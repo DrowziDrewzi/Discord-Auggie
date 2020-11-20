@@ -35,5 +35,5 @@ Final Code:
 
 chaoss/augur-auggie
 Auggie implementation utilizing Amazon Lex to classify messages. You can checkout our GitHub Page at https://chaoss.github.io/augur-auggie/
-Language
+
 
