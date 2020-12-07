@@ -24,8 +24,10 @@ async def add(ctx, repo):
     try:
         subprocess.call(["augur", "db", "add-repos", "csv_file.csv"])
     except:
+        await ctx.send("Sorry, something went wrong. Make sure your repository is public and try again.")
         print("didnt work")
-    finally:
+    else:
+        await ctx.send("Your repository has been added!")
         print("it worked")
 
     response = requests.get("http://localhost:5114/api/unstable/repos/22071/laborhours")
@@ -36,19 +38,18 @@ async def list(ctx):
 
     try:
         p = Popen(["augur", "db", "get-repo-groups"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        subprocess.call(["augur", "db", "get-repo-groups"])
     except:
+        await ctx.send("Sorry, something went wrong.")
         print("didnt work")
-    finally:
+    else:
         print("it worked")
+        repo_tuple = p.communicate()
+        await ctx.send(repo_tuple)
 
-    repo_tuple = p.communicate()
-
-    await ctx.send(repo_tuple)
 
 @client.command()
 async def help(ctx):
-    author = ctx.message.author
-
     embed = discord.Embed(
         colour = discord.Colour.red()
     )
@@ -59,6 +60,6 @@ async def help(ctx):
     embed.add_field(name='-schedule <frequency>', value='Specify scheduled message time. Options are: daily, weekly, or monthly', inline=False)
     embed.add_field(name='-list', value='Returns list of repos you are following', inline=False)
 
-    await ctx.author.send(author, embed=embed)
+    await ctx.send(embed=embed)
 
 client.run(<TOKEN>)
