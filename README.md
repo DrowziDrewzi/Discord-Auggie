@@ -38,3 +38,11 @@ Sprint Goals:
     - Reevaluate original requirements and decide what can be added or changed
 - Final Code:
     - Update commands based upon reevaluation in Sprint 4
+
+- SPRINT 3 UPDATE: 
+Right now, we think Auggie will work best existing outside of the Augur repository. On our server, we have two virtual environments for Augur and Discord-Auggie. In our Discord-Auggie folder, we have a bot.py file which allows us to run our bot with the use of our Discord bot’s token. At the moment we think we can set up all of our commands in this bot.py file. Our goal is for the bot to be able to respond to 5 commands. 
+    - The help command is already functioning; it returns a list of the bots commands and the proper syntax for them. 
+    - Two are partially completed, the add command and list command. The add command should take a user’s repository and add it to the list of repository’s Augur will track for this user. Auggie will execute a shell commands on our server - Augur’s “augur db add” command - which will add a repo for Augur to track. 
+    - The list command will also execute a shell command - Augur’s “augur db group” - which will return the list of repos which are being tracked.
+    - Obstacles: 
+        -One obstacle we are facing right now is that we are having issues with our Augur instance. After it is fixed, we can finish implementing the add command. The      look command will be completed when we determine how to properly pass the information from the shell to our bot.The last two commands we hope to implement include the schedule command and the look command. The schedule command will help the user with scheduling when to receive updates on their repos through Discord messages, and how often to receive these updates. The look command will help a user look at the current state of a specific server they are tracking.
