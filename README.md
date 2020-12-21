@@ -23,7 +23,7 @@ Our current goals:
 Distribution of work on commands:
 - Drew: Request Repo Data
 - Brenna: Add repos to list
-- Tarek: Schedule Timed Messages
+- Tarek: Return list of repos based on group ID parameter
 - Huzaifa: Return users list of repos
 
 Sprint Goals:
