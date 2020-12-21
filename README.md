@@ -9,6 +9,7 @@ Our current plan for what Discord-Auggie should include after completion:
 - Add repos to list command
 - Schedule times messages command
 - Return user’s list of repos command
+- Return repo list based on repo group ID parameter
 
 Rather than creating a fork of Augur, we created our own repository through which we will expand upon Discord-Auggie. We will use Augur’s Auggie (https://github.com/chaoss/augur-auggie) as a starting point. The development process will involve some reconfiguration of the original Auggie, as well as the integration of new commands. 
 
@@ -23,7 +24,7 @@ Our current goals:
 Distribution of work on commands:
 - Drew: Request Repo Data
 - Brenna: Add repos to list
-- Tarek: Return list of repos based on group ID parameter
+- Tarek: Return list of repos based on repo group ID parameter
 - Huzaifa: Return users list of repos
 
 Sprint Goals:
