@@ -12,20 +12,19 @@ Distribution of work on commands:
 - Tarek: list command
 - Huzaifa: look command
 
-Commands and how they work
-- list <repo_group_id>
-    The Discord user sends the “-list” command followed by the repo_group_id. The program retrieves a list of all stored repositories using the JSON file at “http://lions.sociallycompute.io:5100/api/unstable/repos/“. Then, the program uses a for-loop to find and display all JSON objects (repositories) with a repo_group_id matching the ID supplied by the user. 
-- listgroups
-    The Discord user sends the “-listgroups” command. The program retrieves a list of all stored repo groups using the JSON file at “http://lions.sociallycompute.io:5114/api/unstable/repo-groups/“. Then, the program uses a for-loop to display all JSON objects (repo groups).*
-* The program excludes an extra group we added but could not remove, which causes errors. On other servers where repo groups are added correctly, this would not be an issue.
-- mygroups
-    The Discord user sends the “-mygroups” command. The program retrieves the user’s username and Discord tag using Discord’s client, and uses that information to access a text file with a list of all stored repo group IDs.  (This text file can be created and added onto with the “-monitor” command.)Then, the program uses a for-loop to display all of the repo group IDs stored in that file. 
-- look <repo_id>
-    The Discord user sends the “-look” command followed by a the repo_id. The program retrieves a list of all stored repositories using the JSON file at “http://lions.sociallycompute.io:5100/api/unstable/repos/“. Then, the program uses a for-loop to find and display the JSON object (repository) with the repo_id matching the ID supplied by the user. 
-- monitor <repo_group_id>
-    The Discord user sends the “-monitor” command followed by the repo_group_id. The program retrieves the user’s username and Discord tag using Discord’s client, and then uses that to access a text file named after this information. If the file does not already exist, then it is created. The program checks if the repo_group_id is already being monitored by comparing the user’s input to each line in the text file. Then, the program accesses a list of all stored repo groups using the JSON file at “http://lions.sociallycompute.io:5114/api/unstable/repo-groups/”. Using the JSON data, the program checks if the repo_group_id exists. If the repo_group_id exists in the JSON file but not in the user’s text file, then it is added to the monitoring list.
-- schedule <frequency>
-    The Discord user sends the “-schedule” command followed by the frequency with which they would like to receive updates. They can choose to receive updates daily (every 24 hours), weekly (every 168 hours), or monthly (every 730 hours).  The bot checks if the user input the command properly, then checks if there is already a schedule function running. Then, it starts a task by calling one of the schedule functions(daily_schedule, weekly_schedule, or monthly_schedule.) Each function runs at different increments of time. When any of the functions are called, they call another function which collects data about the repo groups from the user’s monitor list.
+# Commands and how they work
+list <repo_group_id>
+- The Discord user sends the “-list” command followed by the repo_group_id. The program retrieves a list of all stored repositories using the JSON file at “http://lions.sociallycompute.io:5100/api/unstable/repos/“. Then, the program uses a for-loop to find and display all JSON objects (repositories) with a repo_group_id matching the ID supplied by the user. 
+listgroups
+- The Discord user sends the “-listgroups” command. The program retrieves a list of all stored repo groups using the JSON file at “http://lions.sociallycompute.io:5114/api/unstable/repo-groups/“. Then, the program uses a for-loop to display all JSON objects (repo groups). (*NOTE: The program excludes an extra group we added but could not remove, which causes errors. On other servers where repo groups are added correctly, this would not be an issue.)
+mygroups
+- The Discord user sends the “-mygroups” command. The program retrieves the user’s username and Discord tag using Discord’s client, and uses that information to access a text file with a list of all stored repo group IDs.  (This text file can be created and added onto with the “-monitor” command.)Then, the program uses a for-loop to display all of the repo group IDs stored in that file. 
+look <repo_id>
+- The Discord user sends the “-look” command followed by a the repo_id. The program retrieves a list of all stored repositories using the JSON file at “http://lions.sociallycompute.io:5100/api/unstable/repos/“. Then, the program uses a for-loop to find and display the JSON object (repository) with the repo_id matching the ID supplied by the user. 
+monitor <repo_group_id>
+- The Discord user sends the “-monitor” command followed by the repo_group_id. The program retrieves the user’s username and Discord tag using Discord’s client, and then uses that to access a text file named after this information. If the file does not already exist, then it is created. The program checks if the repo_group_id is already being monitored by comparing the user’s input to each line in the text file. Then, the program accesses a list of all stored repo groups using the JSON file at “http://lions.sociallycompute.io:5114/api/unstable/repo-groups/”. Using the JSON data, the program checks if the repo_group_id exists. If the repo_group_id exists in the JSON file but not in the user’s text file, then it is added to the monitoring list.
+schedule <frequency>
+- The Discord user sends the “-schedule” command followed by the frequency with which they would like to receive updates. They can choose to receive updates daily (every 24 hours), weekly (every 168 hours), or monthly (every 730 hours).  The bot checks if the user input the command properly, then checks if there is already a schedule function running. Then, it starts a task by calling one of the schedule functions(daily_schedule, weekly_schedule, or monthly_schedule.) Each function runs at different increments of time. When any of the functions are called, they call another function which collects data about the repo groups from the user’s monitor list.
 
 # How to use Discord-Auggie: 
 follow this link to add discord-auggie to a discord server!
