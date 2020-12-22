@@ -12,7 +12,7 @@ Distribution of work on commands:
 - Tarek: list command
 - Huzaifa: look command
 
-# How to uses Discord-Auggie: 
+# How to use Discord-Auggie: 
 follow this link to add discord-auggie to a discord server!
 https://discord.com/api/oauth2/authorize?client_id=779124634318536735&permissions=2048&scope=bot
 Now that the bot is in your server you can use these commands: 
